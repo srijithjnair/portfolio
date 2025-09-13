@@ -57,6 +57,11 @@ p {
 	margin-top: 30px;
 	transition: 0.3s ease;
 	transition-property: background-color, color;
+    position: relative;
+    z-index: 2;
+    background: rgba(220, 20, 60, 0.85);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 .cta:hover {
 	color: white;
@@ -200,7 +205,7 @@ p {
 
 /* Hero Section */
 #hero {
-	background-image: url(./img/hero-bg.png);
+	background-image: url(./img/hero-bg1.jpg);
 	background-size: cover;
 	background-position: top center;
 	position: relative;
@@ -324,6 +329,13 @@ p {
 	color: white;
 	text-align: left;
 }
+/* Hover effect for Services Section */
+#services .service-item:hover {
+	transform: translateY(-10px) scale(1.03);
+	box-shadow: 0 12px 32px rgba(0,0,0,0.18), 0 1.5px 6px rgba(0,0,0,0.15);
+	transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+	cursor: pointer;
+}
 /* End Services Section */
 
 /* Projects section */
@@ -380,6 +392,10 @@ p {
 	height: 300px;
 	overflow: hidden;
 	position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
 }
 #projects .project-img:after {
 	content: '';
@@ -390,9 +406,38 @@ p {
 	width: 100%;
 	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
 	opacity: 0.7;
+    z-index: 1;
 }
 #projects .project-img img {
 	transition: 0.3s ease transform;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	z-index: 0;
+}
+/* Ensure the button is above the overlay */
+/* Project section GitHub button below details */
+#projects .project-link {
+	display: inline-block;
+	margin: 24px auto 0 auto;
+	background: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	color: #fff;
+	border-radius: 6px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+	font-size: 1.5rem;
+	padding: 10px 32px;
+	border: none;
+	text-align: center;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background 0.3s, color 0.3s;
+	font-weight: 600;
+}
+#projects .project-link:hover {
+	background: #fff;
+	color: #29323c;
+	border: 2px solid #29323c;
 }
 #projects .project-item:hover .project-img img {
 	transform: scale(1.1);
